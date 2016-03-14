@@ -1,0 +1,37 @@
+
+# Git data transport command
+# source: http://ostreele.com
+    |--------- commit -a -------->|
+    |                             |
+    |-- add (-u)-->|-- commit --->|
+    |              |              |
+    |              |              |--- push --->|
+    |              |              |             |
+workspace        index          local        remote
+    |              |          repository    repository
+    |              |              |             |
+    |              |              |             |
+    |<------------- pull or rebase -------------|
+    |              |              |             |
+    |              |              |<-- fetch ---|
+    |<------ checkout HEAD -------|             |
+    |              |              |             |
+    |<-- checkout -|              |             |
+    |              |              |             |
+    |<-- diff -----|              |             |
+# Remove unpushed commit and do keep a track of them
+git reset --soft HEAD~1
+# Remove unpushed commit and do NOT keep a track of them
+git reset --hard HEAD
+# Cancel add <file>
+git reset <file>
+# Cancel all adds
+git reset
+# Cancel staged but uncommited removal
+git checkout HEAD <file>
+# List committed but unpushed changes
+# Here master is your local master branch. origin/master is the remote master
+# branch
+git log origin/master..master
+
+

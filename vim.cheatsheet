@@ -1,0 +1,15 @@
+undo: u
+cut line: dd
+copy line: yy
+cut from cursor: D
+paste line after current line: p
+paste line before current line: P
+copy several line:
+  Go on the first line: mk (mark as k)
+  Go to the last line: y'k (yank from k)
+clear search highlighting: :noh
+close file without quiting: :bd
+convert tabs to spaces: :retab
+display special character: :set list (:set nolist)
+copie word: yw
+select all (in normal mode): ggVG
